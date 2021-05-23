@@ -1,0 +1,55 @@
+GIt是專案管理工具
+如果要使用GIT就必須去下載GIT工具，且必須使用cmd(使用命令介面)來操作git
+git基本操作:
+1.git init初始化GIT repository
+2.git status 觀察repositorty檔案狀態
+3.git add 檔名 /git add. 將打案加入追蹤(Index)清單
+4.git commit -m "版本更新訊息" 建立一組版本更新
+5.git branch 查看分支(Branch)
+
+步驟
+1.在適合的地方建立一個專案 ex:project-1，把所有網站有關的東西都放在該專案裡
+2.在專案資料夾的路徑設定，專案在哪裡工作資料夾就在哪裡。
+3.在該路徑底下初始化git init ，意思是在該專案資料夾裡，放入一個隱藏的資料夾(.git)。
+4.如果在該檔案裡新增檔案，這時使用git status時就會出現該檔案名稱(表示尚未commit)。
+5.這時如果要把改過的程式或新增的程式，加入git裡時，這時候就要打git add/如果改動的檔案很多這時候就可以打git add.將所有程式一次加入到git裡。
+6.這時檔名就會呈現綠色(表示已加入追蹤)
+7.這時使用git commit -m""，用來新增一個版本。
+
+git branch
+1.git branch功用:在不想要動到主程式的情況下，新增一個新的功能，這時就會使用到git branch。
+2.如果再CMD裡面打git Branch就會出現你的專案裡有哪些分支，第一次打branch會出現 *master代表主branch。
+
+git log
+1.用來查看先前commit的版本紀錄
+
+
+github
+1.github最主要的運作單位就是repository(可以翻作雲端的專案空間)
+2.Repository name可以隨便填。
+3.如果你想要把你的專案分享給同事，可以利用github，將專案紀錄上傳到github的雲端空間。
+4.就算獨立開發，也可以傳到github備份。
+5.git remote -v 查詢關聯的Repository，-v會顯示得更詳細。空白代表目前沒有關聯的雲端空間。
+6.本機端專案跟Github連接，git remote add (origin/我們替遠端命名的名稱) + 雲端專案空間的連線網址。
+7.git push 遠端空間的名稱 遠端空間的分支。 ->用途為上傳到GIthub雲端專案空間。
+8.origin URL (fetch)代表抓取的網址。
+9.origin URL (push)代表上傳的網址。
+
+如何跟其他同事合作同一個專案?
+1.下載github雲端專案到本機
+2.git clone 遠端空間的網址 本機資料夾名稱(自己取)   (第一次下載github雲端專案)
+3.未來必須要不斷的從github雲端下載合併更新專案，這時候就會用到git pull 遠端空間的名稱 遠端空間的分支
+4.上班第一件事就是使用git pull 來合併專案。
+
+總結步驟:
+1.git pull 合併專案
+2.寫程式(更動)
+3.git status
+4.git add
+5.git commit
+6.git push
+
+
+
+
+
