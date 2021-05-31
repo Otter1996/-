@@ -17,7 +17,7 @@ git基本操作:
 7.這時使用git commit -m""，用來新增一個版本。
 
 git branch
-1.git branch功用:在不想要動到主程式的情況下，新增一個新的功能，這時就會使用到git branch。
+1.git branch功用:在不想要動到主程式的情況下，新增一個新的功能，這時就會使用到git branch。那分支的目的就是將整體流程做一個分岔的保存。
 2.如果再CMD裡面打git Branch就會出現你的專案裡有哪些分支，第一次打branch會出現 *master代表主branch。
 
 git log
@@ -44,12 +44,73 @@ github
 總結步驟:
 1.git pull 合併專案
 2.寫程式(更動)
-3.git status
+3.git status /git status -s(縮寫)
 4.git add
 5.git commit
 6.git push
 
+如何看到修改狀態的詳細內容?
+1.git diff 必須使用在git add 之才會有效。
+2.git diff --cached可以使用在git add之後。
+
+如果已commit的版本想回頭加入某些內容，但還是維持在該commit版本的方法?
+1.git commit --amend --no-edit(不想改發佈內容)
+雖然不會commit出其他版本但commit id還是會有所改變。
+
+如果已經git add的檔案想要反悔，回到Modifiy的狀態如何做到?
+git reset (檔案名)
+
+如果想要回朔版本可以怎做?
+1.git reset --hard HEAD(往前回朔一個版本，HEAD表示指針)
+2.git reset --hard HEAD^^/git reset --hard HEAD~2 皆表示往前回朔兩個版本
+3.git reset --hard (版本號碼) 可以回朔到指定的版本
+
+如果回朔了以後又反悔了，該怎麼辦?
+1.使用git reflog 可以看到HEAD(指針)每一步的紀錄
+2.看到了指針先前的紀錄之後，就可以使用git reset --hard (版本ID/HEAD@{數字})
+
+使用checkout來針對單個文件回朔所進行的操作
+git checkout (欲回朔到該版本內容的ID) -- (文件名稱EX:1.py)
+
+在一個雲端資料庫下，如果要觀看另一個版本就逼需透過移動HEAD來進行。以下步驟
+1.創制分支 git branch (分支名)
+2.查看分支是否被創建: git branch
+3.如果想要進入到分支裡，就必須使用git checkout(分支名)
+
+新增文件:touch (文件名)
+
+修改文件:vi (文件名) 修改後保存";"
+
+查看文件內容: cat (文件名)
+
+同時創建一個分支並將HEAD指像該分支的語法:git checkout -b (分支名)
+
+刪除分支: git branch -d (分支名)
+
+差看HEAD目前所指向的HEAD分支內容:ll
+
+如果想要合併分支可以使用:git merge (分支名字) 那merge的對象就是當前HEAD所在的點。
+
+如果想要把branch也推送上github就必須到該branch裡 git push origin (分支名)
+
+如果想要在本地刪除分支其命令如下:git push origin :(分支名)
+
+如果本地的branch叫feature1但是遠端的branch不想叫feature1該怎麼做? git push origin feature:f1
+
+查看git commit 紀錄:git log / git log --oneline
+
+查看某次commit到底commit了甚麼，git show (commit碼)
+
+如果看到文件裡長成
+<<<<<<<<<HEAD
+OOOOXXXXX     <---當前分支的內容(本地)
+=========
+OOOXXXXXX     <---欲合併的分支內容(遠端主機)
+>>>>>>>>>(branch name)
+代表merge時發生衝突，原因是因為有人在你pull之後又push到該分支上，怕你不知道裡面內容而覆蓋過去。
 
 
+如果需要merge就可以使用git mergetool來進行合併
 
+刪除分支裡面的某文件，rm (文件名)
 
