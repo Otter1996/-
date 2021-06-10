@@ -1,0 +1,81 @@
+# 標題H1
+
+## 標題H2
+
+### 標題H3
+
+#### 標題H4
+
+##### 標題H5
+
+###### 標題H5
+
+### 字元效果和橫線
+---
+<s>刪除線（開啟識別HTML標籤時）</s>
+
+*斜體字*      _斜體字_
+
+***粗斜體*** ___粗斜體___
+
+> 這個是縮寫的寫法
+
+### 引用 Blockquotes
+
+[普通連結](https://www.mdeditor.tw/)
+
+直接連結：<https://www.mdeditor.tw>
+
+[mailto:test.test@gmail.com(mail連結)](mailto:test.test@gmail.com)
+
+執行命令：`npm install marked`
+
+#### JS程式碼
+```javascript
+function test() {
+    console.log("Hello world!");
+}
+```
+#### HTML 程式碼 HTML codes
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <meta name="keywords" content="Editor.md, Markdown, Editor" />
+        <title>Hello world!</title>
+        <style type="text/css">
+            body{font-size:14px;color:#444;font-family: "Microsoft Yahei", Tahoma, "Hiragino Sans GB", Arial;background:#fff;}
+            ul{list-style: none;}
+            img{border:none;vertical-align: middle;}
+        </style>
+    </head>
+    <body>
+        <h1 class="text-xxl">Hello world!</h1>
+        <p class="text-green">Plain text</p>
+    </body>
+</html>
+```
+
+### 圖片 Images
+
+圖片加連結 (Image + Link)：
+
+[![](https://www.mdeditor.tw/images/logos/markdown.png)](https://www.mdeditor.tw/images/logos/markdown.png "markdown")
+
+#### 無序列表（加號和巢狀）Unordered Lists (+)
++ 列表一
++ 列表二
+    + 列表二-1
+    + 列表二-2
+    + 列表二-3
++ 列表三
+    * 列表一
+    * 列表二
+    * 列表三
+
+#### 有序列表 Ordered Lists (-)
+
+1. 第一行
+2. 第二行
+3. 第三行
