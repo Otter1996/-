@@ -59,6 +59,8 @@ github
 
 如果已經git add的檔案想要反悔，回到Modifiy的狀態如何做到?
 git reset (檔案名)
+如果已經commit的檔案想要反悔，回到Modifiy的狀態如何做到?
+git reset (所在分支/masters orign)
 
 如果想要回朔版本可以怎做?
 1.git reset --hard HEAD(往前回朔一個版本，HEAD表示指針)
@@ -79,7 +81,7 @@ git checkout (欲回朔到該版本內容的ID) -- (文件名稱EX:1.py)
 
 新增文件:touch (文件名)
 
-修改文件:vi (文件名) 修改後保存";"
+修改文件:vi (文件名) 修改後保存"wq"
 
 查看文件內容: cat (文件名)
 
@@ -114,3 +116,21 @@ OOOXXXXXX     <---欲合併的分支內容(遠端主機)
 
 刪除分支裡面的某文件，rm (文件名)
 
+git revert:可以撤銷某一次操作，此次操作之前和之後的commit 和 history都保留，並且把這次撤銷為一次最新的提交
+
+gitignore文件可以避免一些不必要資料上傳或者是一些敏感資料，以下為gitignore的寫法。
+*.sh //代表所有的.sh檔都都會忽略
+.settings/ //代表settings這個資料夾內的所有東西都要忽略
+!.txt //代表所有的txt文件都是不能夠被忽略的
+/a/*.class //代表所有a資料夾內的.class檔都是要被忽略的
+
+
+如果要幫忙別人的github雲端資料庫做出貢獻或者是fork雲端資料庫(複製倉庫到我自己的雲端)，可以使用下列步驟
+1.git clone 本機舊專案網址
+2.git remote -v 可以查看遠程有幾個分支
+3.下載下來的本機資料跟遠端做連結 git remote add upstream(自己命名，但不是自己的專案所以取作其他名字) 該新更新專案網址(分本地repository)
+4.git remote -v 這時候會出現一組origin(舊版本) 跟一組upstram(新版本)
+5.這時候就可以使用git fetch upstream 把新專案內容抓下來
+6.pull = fetch + merge
+7.合併舊專案內容和新專案內容。
+8.如果只是為了同步git rebase upstream/master,如果對內容有更動就應改使用git merge
