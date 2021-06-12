@@ -19,11 +19,11 @@
 5. .NET類別庫本身就是一個巨大的自訂類型集合。但必須將專案參考新增至其定義所在的元件時專案才可以使用
 
 6. C#編譯過程縮略圖![](https://i.imgur.com/qKEyVNj.png)
-    1. 一般型別系統(CTS:Common Type System):是屬於.NET中的型別系統，有兩個基本要點
-    (1) 它支持繼承原則，分成衍生型別和基底型別。衍生型別會繼承基底型別的方法、屬性、和其他成員。所有型別(包括Int、class、Interface、delegate)最終都是從單一基底型別衍生而來，這殼基底型別是"object"(System.Object)。
-    (2) CTS中的每個型別都會定義【實質型別(valueType)】和【參考型別(referenceType)】。如果任何型別有繼承strcut型別，那就一定是valueType；如果是class型別或是record型別那就是referenceType。
-    (3) 對編譯器(compiler)來說ValueTyp、RefType都有各自的編譯原則和不同runtime行為。
-    (4) CTS定義了一套通用的編譯時的數據型別系統。舉一個簡單的例子在vb.net中對整數的定義為integer；在C#中對整數的定義為int，在編譯之後interger和int統一變為Int32
+    1. 一般型別系統(CTS:Common Type System):是屬於.NET中的型別系統，有兩個基本要點</br>
+    (1) 它支持繼承原則，分成衍生型別和基底型別。衍生型別會繼承基底型別的方法、屬性、和其他成員。所有型別(包括Int、class、Interface、delegate)最終都是從單一基底型別衍生而來，這殼基底型別是"object"(System.Object)。</br>
+    (2) CTS中的每個型別都會定義【實質型別(valueType)】和【參考型別(referenceType)】。如果任何型別有繼承strcut型別，那就一定是valueType；如果是class型別或是record型別那就是referenceType。</br>
+    (3) 對編譯器(compiler)來說ValueTyp、RefType都有各自的編譯原則和不同runtime行為。</br>
+    (4) CTS定義了一套通用的編譯時的數據型別系統。舉一個簡單的例子在vb.net中對整數的定義為integer；在C#中對整數的定義為int，在編譯之後interger和int統一變為Int32</br>.
     ![](https://i.imgur.com/qkk9Py3.png)
     2. IL(中間語言):是由CLS(Common Language Specification)編譯，實現通用，反編譯就可以形成其他代碼。在.net framework有二次編譯的概念，二次編譯，為了不同平台上使用，加上一層中間層，更靈活，透過VS編譯器　編譯成dll/exe，點擊exe的時候，他有一個依賴的環境叫做CLR，dll/exe裡面包含兩大塊:IL（中間語言）和metadata(中繼資料)。metadata會紀錄這dll/exe裡面有哪些東西
     3. CLR(Common Language Runtime):用於驅動程式運行，執行及時編譯(JIT:Just in time)，將IL代碼轉換成機器指令。另外還包括垃圾回收(GC:Garbage Collection)等。
